@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./scripts/script_index.js" type="text/JavaScript" defer></script>
+    <link rel="stylesheet" type="text/css" href="./styles/style_index.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+
+            <form>
+              <input type="text" id="searchInput" placeholder="Rechercher une ligne de bus">
+
+            </form>
+        </nav>
+    </header>
+    <section>
+        <article>
+            <button type="submit" id="button1">Afficher les lignes</button>
+            <ul class="lignes" id="liste">
+                
+            </ul>
+        </article>
+    </section>
+    
+<script>
+    let input = document.getElementById("searchInput");
+    let list = document.getElementById("liste");
+    let items = list.getElementsByTagName("li");
+  
+    input.addEventListener("input", function() {
+      let searchText = this.value.toLowerCase();
+  
+      for (let i = 0; i < items.length; i++) {
+        let item = items[i];
+        let itemText = item.innerHTML.toLowerCase();
+  
+        if (itemText.indexOf(searchText) !== -1) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      }
+    });
+
+
+</script>
+    
+</body>
+</html>
