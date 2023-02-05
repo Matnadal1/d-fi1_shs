@@ -53,6 +53,10 @@ button {
   text-align: left;
 }
 
+.ligne:hover {
+  background-color: rgb(206, 230, 238);
+}
+
 #button1 {
   display: block;
   margin: 20px auto;
@@ -74,16 +78,5 @@ button {
 
   background-color: aliceblue !important;
 }
-/*
 
-.ligne.active {
-  width: 100%;
-}
-
-.ligne:not(.active) {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-*/
 

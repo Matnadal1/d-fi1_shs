@@ -35,8 +35,12 @@ document.querySelector("#button1").addEventListener("click", function(){
 
                     // On vérifie si la ligne a deja les arrets d'afficher
 
-                    if (!previousActive) {
 
+                    if (!event.currentTarget.classList.contains('active')) {
+                        
+                        if (previousActive) {
+                            previousActive.classList.remove('active');
+                        }
                         // Si non on ajoute "active" a sa classe et on affiche les arrets
                         
                         const id = event.currentTarget.id;
@@ -73,7 +77,7 @@ document.querySelector("#button1").addEventListener("click", function(){
                                 document.querySelectorAll('#liste li ul').forEach(e => e.innerHTML = ""); 
                                 
                                 // affiche les arrets
-                                
+
                                 document.querySelector(`#liste li[id="${id}"] #arret_ligne`).innerHTML = codeHTML;
 
                             }
