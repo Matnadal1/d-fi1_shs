@@ -73,6 +73,7 @@ function fetchStops(lineId) {
 // Affiche les arrets
   
 function displayStops(lineId, previousStops) {
+  document.querySelectorAll('#liste li ul').forEach(e => e.innerHTML = "");
     let codeHTML = "";
     for (let i = 0; i < previousStops.length; i++){
         codeHTML+="<li class='arret'>"+previousStops[i]+"</li>"
